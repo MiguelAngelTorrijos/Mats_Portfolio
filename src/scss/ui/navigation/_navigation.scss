@@ -1,0 +1,175 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+.navigation {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  width: 100%;
+  background-color: #141b1ef3;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: none;
+  body.dark & {
+    background-color: #f5f5f5e8;
+  }
+  @include tablet {
+    display: block;
+  }
+
+  &__grid {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:nth-child(2) {
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__link {
+    color: $lightGray;
+    margin-top: 0.3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-left: 4rem;
+    border-bottom: 0.3rem solid transparent;
+    body.dark & {
+      color: $primary;
+    }
+    @media (min-width: 769px) and (max-width: 820px) {
+      font-size: 1.7rem;
+    }
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:hover {
+      color: $orange;
+      border-bottom: 0.3rem solid $orange;
+      body.dark & {
+        color: $orange;
+      }
+    }
+  }
+
+  &__setting {
+    background-image: url('../../../img/setting_icon.svg');
+    width: 24px;
+    height: 24px;
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+}
+.switch {
+  background-color: #2f2f30;
+  border-radius: 100px;
+  border: none;
+  position: relative;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  width: 55px;
+  height: 26px;
+  margin-left: 1rem;
+  justify-content: space-between;
+  padding: 0;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+
+  &::after {
+    content: '';
+    // display: block;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    background: $white;
+    top: 0px;
+    left: 0px;
+    right: unset;
+    border-radius: 100px;
+    transition: 0.3s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  &.active {
+    background: rgb(235, 190, 9);
+    color: black;
+    &::after {
+      right: 0;
+      left: unset;
+    }
+  }
+
+  span {
+    // width: 24px;
+    // height: 24px;
+    @include tablet {
+      width: 24px;
+      height: 24px;
+    }
+    line-height: 24px;
+    display: block;
+    background: none;
+    color: $white;
+  }
+}
+
+.audioOff {
+  color: white;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  background-color: rgba(153, 102, 153, 0);
+  &:hover {
+    color: $orange;
+    body.dark & {
+      color: $orange;
+    }
+  }
+  body.dark & {
+    color: $primary;
+  }
+}
+.audioOn {
+  color: white;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  background-color: rgba(153, 102, 153, 0);
+  &:hover {
+    color: $orange;
+    body.dark & {
+      color: $orange;
+    }
+  }
+  body.dark & {
+    color: $primary;
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: columns;
+  align-items: center;
+}
+
+// .fas {
+//   margin: 0rem 0.4rem;
+// }

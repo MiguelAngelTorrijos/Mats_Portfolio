@@ -1,0 +1,15 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+.wear-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  pointer-events: none;
+  // gap: 0.5rem;
+  @media (max-width: 650px) {
+    width: 90vw;
+  }
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,203 @@
+@import '../../base/mixins';
+@import '../../base/variables';
+
+.section-developer {
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+  @include tablet {
+    margin-top: 19rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &__grid {
+    justify-content: center;
+    @media (min-width: 930px) {
+      &::before {
+        content: '<section>';
+        white-space: pre;
+        line-height: 3rem;
+        font-family: 'La Belle Aurore', cursive;
+        color: #515152;
+        font-size: 1.8rem;
+        position: relative;
+        margin-bottom: 3rem;
+        left: -4.8rem;
+        body.dark & {
+          opacity: 0.4;
+        }
+      }
+    }
+    @include tablet {
+      margin-left: 2rem;
+      margin-right: 1rem;
+      width: 760px;
+      display: grid;
+      padding: 0;
+      gap: 1rem;
+      // grid-template-columns: (3, 1fr);
+      & :nth-child(1) {
+        grid-column: 1/2;
+      }
+      & :nth-child(2) {
+        grid-column: 2/3;
+      }
+    }
+    &__details {
+      &__title {
+        margin: 0;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 3.2rem;
+        margin-bottom: 1rem;
+        @include tablet {
+          font-size: 4.2rem;
+          color: $white;
+          margin: 0;
+          margin-bottom: 1.8rem;
+        }
+      }
+    }
+    &__details p {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      color: #ffffff;
+      line-height: 2.5rem;
+      @include tablet {
+        font-size: 2rem;
+      }
+    }
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+      @include tablet {
+        margin-top: 0;
+      }
+      &__settings {
+        justify-content: center;
+        align-items: center;
+        width: 25rem;
+        @include tablet {
+          margin: 1rem 1rem 1rem 2.4rem;
+          width: 24rem;
+        }
+      }
+    }
+  }
+}
+
+.link-developer {
+  color: $white;
+  text-decoration: underline;
+  text-decoration-color: $orange;
+  box-shadow: inset 0 0 0 0 $primary;
+  transition: all ease 0.5s;
+  body.dark & {
+    color: $primary;
+  }
+  &:hover {
+    text-decoration-color: $black;
+    box-shadow: inset 200px 0 0 0 $white;
+    color: $primary;
+    body.dark & {
+      text-decoration-color: $secondary;
+      box-shadow: inset 200px 0 0 0 $primary;
+      color: $secondary;
+    }
+  }
+}
+
+.logo1-developer {
+  pointer-events: none;
+  position: absolute;
+  // @media (max-width: 539px) {
+  //   width: 20rem;
+  //   height: 20rem;
+  // }
+  @include tablet {
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+  }
+  z-index: 2;
+  width: 21rem;
+  height: 21rem;
+  body.dark & {
+    display: none;
+  }
+}
+.logo1White-developer {
+  pointer-events: none;
+  position: absolute;
+  // @media (max-width: 539px) {
+  //   width: 21rem;
+  //   height: 21rem;
+  // }
+  @include tablet {
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+  }
+  z-index: 1;
+  width: 21rem;
+  height: 21rem;
+}
+.logo2-developer {
+  pointer-events: none;
+  width: 21rem;
+  height: 21rem;
+  position: relative;
+  // @media (max-width: 539px) {
+  //   width: 20rem;
+  //   height: 20rem;
+  // }
+  @include tablet {
+    position: relative;
+    width: 24rem;
+    height: 24rem;
+  }
+  z-index: -1;
+  animation-name: moveDownDev;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 0.5s;
+}
+
+@keyframes moveDownDev {
+  0% {
+    top: 20px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+@media (min-width: 540px) and (max-width: 767px) {
+  @keyframes moveDownDev {
+    0% {
+      top: 20px;
+    }
+
+    100% {
+      top: 0;
+    }
+  }
+}
+
+@include tablet {
+  @keyframes moveDownDev {
+    0% {
+      top: 25px;
+    }
+
+    100% {
+      top: 0;
+    }
+  }
+}

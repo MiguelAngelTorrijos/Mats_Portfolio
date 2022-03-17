@@ -1,0 +1,30 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+.various-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  pointer-events: none;
+  // gap: 0.5rem;
+
+  @media (max-width: 650px) {
+    width: 90vw;
+  }
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    & :nth-child(7) {
+      grid-column: 1/3;
+      grid-row: 4/8;
+      width: 100%;
+      // height: 100%;
+      object-fit: cover;
+    }
+    & :nth-child(12) {
+      grid-column: 1/3;
+      grid-row: 10/10;
+      width: 100%;
+      // height: 100%;
+      object-fit: cover;
+    }
+  }
+}

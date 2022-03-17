@@ -1,0 +1,364 @@
+@import '../../base/mixins';
+@import '../../base/variables';
+
+.just-center-contact {
+  display: flex;
+  justify-content: center;
+}
+
+.page-contact {
+  @media (min-width: 930px) {
+    &::after {
+      content: '</form>';
+      font-family: 'La Belle Aurore', cursive;
+      color: #515152;
+      font-size: 1.8rem;
+      position: relative;
+      top: 2rem;
+      left: -4rem;
+      body.dark & {
+        opacity: 0.4;
+      }
+    }
+    &::before {
+      content: '<section>';
+      font-family: 'La Belle Aurore', cursive;
+      color: #515152;
+      font-size: 1.8rem;
+      position: relative;
+      top: 0rem;
+      left: -4rem;
+      body.dark & {
+        opacity: 0.4;
+      }
+    }
+  }
+  margin-left: 2rem;
+  margin-top: 9.5rem;
+  margin-bottom: 8rem;
+  margin-right: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 540px) {
+    margin-top: 14rem;
+    display: grid;
+    gap: 1rem;
+    & :nth-child(1) {
+      grid-column: 1/3;
+    }
+    & :nth-child(2) {
+      grid-column: 1/2;
+    }
+    & :nth-child(3) {
+      grid-column: 2/4;
+    }
+    & :nth-child(4) {
+      grid-column: 1/4;
+    }
+  }
+  @include tablet {
+    margin-top: 15rem;
+    width: 780px;
+    display: grid;
+    gap: 1rem;
+    & :nth-child(1) {
+      grid-column: 1/3;
+    }
+    & :nth-child(2) {
+      grid-column: 1/2;
+    }
+    & :nth-child(3) {
+      grid-column: 2/3;
+      //   grid-row: 2/4;
+    }
+    & :nth-child(4) {
+      grid-column: 1/3;
+    }
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    // color: $white;
+    margin: 0;
+    @include tablet {
+      font-size: 7rem;
+    }
+    @media (min-width: 400px) and (max-width: 767px) {
+      font-size: 4.8rem;
+    }
+  }
+  &__intro {
+    @media (min-width: 930px) {
+      &::after {
+        content: '</section>';
+        font-family: 'La Belle Aurore', cursive;
+        color: #515152;
+        font-size: 1.8rem;
+        position: relative;
+        top: 1rem;
+        left: -4rem;
+        body.dark & {
+          opacity: 0.4;
+        }
+      }
+    }
+    &__info p {
+      color: $white;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      line-height: 3rem;
+      &:nth-child(1) {
+        margin-top: 3rem;
+      }
+      @media (min-width: 400px) and (max-width: 767px) {
+        font-size: 1.6rem;
+      }
+      @include tablet {
+        font-size: 2rem;
+      }
+    }
+    &__img {
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      margin: 3rem 0;
+      &__setting {
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  &__form {
+    @media (min-width: 930px) {
+      &::before {
+        content: '<form>';
+        font-family: 'La Belle Aurore', cursive;
+        color: #515152;
+        font-size: 1.8rem;
+        position: relative;
+        top: -2rem;
+        left: -4rem;
+        body.dark & {
+          opacity: 0.4;
+        }
+      }
+    }
+    @include tablet {
+      margin-top: 7rem;
+    }
+    &__fields {
+      &__filed {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: white;
+        body.dark & {
+          color: $primary;
+        }
+        &__label {
+          margin-bottom: 0.6rem;
+        }
+        &__input {
+          color: $white;
+          font-size: 1.6rem;
+          padding-left: 2rem;
+          height: 5.5rem;
+          display: inline-block;
+          margin-top: 0.5rem;
+          margin-right: 1rem;
+          margin-bottom: 3rem;
+          background-color: black;
+          border: 0.2rem solid #8b8b8b;
+          body.dark & {
+            background-color: $white;
+            color: $primary;
+          }
+          @include tablet {
+            width: auto;
+            font-size: 1.8rem;
+            margin-right: 0;
+          }
+          @media (max-width: 330px) {
+            width: auto;
+          }
+          &:focus {
+            outline: unset;
+            border: 1px solid $orange;
+          }
+        }
+        &__textarea {
+          color: $white;
+          font-size: 1.5rem;
+          line-height: 2.2rem;
+          padding-left: 2rem;
+          margin-right: 1rem;
+          padding-top: 2rem;
+          height: 14rem;
+          margin-top: 0.5rem;
+          margin-bottom: 3rem;
+          background-color: black;
+          border: 0.2rem solid #8b8b8b;
+          &:focus {
+            outline: unset;
+            border: 1px solid $orange;
+          }
+          @include tablet {
+            width: auto;
+            margin-right: 0rem;
+          }
+          body.dark & {
+            background-color: $white;
+            color: $primary;
+          }
+        }
+      }
+    }
+    &__alert {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    &__alert p {
+      padding: 1.5rem;
+      font-size: 1.6rem;
+      background-color: #8b8b8b41;
+      padding-left: 2rem;
+      height: 5.5rem;
+      display: inline-block;
+      margin-top: 0.5rem;
+      margin-right: 1rem;
+      margin-bottom: 3rem;
+      @include tablet {
+        width: auto;
+        margin-right: 0rem;
+        font-size: 2rem;
+      }
+    }
+    &__submit {
+      color: white;
+      font-weight: 700;
+      font-size: 1.6rem;
+      padding: 1.6rem 3.2rem;
+      background-color: black;
+      border: 0.2rem solid #8b8b8b;
+      @include tablet {
+        font-size: 2rem;
+      }
+      &:hover {
+        background-color: #55595c43;
+        body.dark & {
+          background-color: #ababab;
+        }
+      }
+    }
+  }
+}
+.link-contact {
+  color: $white;
+  text-decoration: underline;
+  text-decoration-color:$orange;
+  box-shadow: inset 0 0 0 0 $primary;
+  transition: all ease 0.5s;
+  body.dark & {
+    color: $primary;
+  }
+  &:hover {
+    text-decoration-color: $black;
+    box-shadow: inset 300px 0 0 0 $white;
+    color: $primary;
+    body.dark & {
+      text-decoration-color: $secondary;
+      box-shadow: inset 300px 0 0 0 $primary;
+      color: $secondary;
+    }
+  }
+}
+
+// LOGO //
+
+.logo1-contact {
+  position: absolute;
+  @media (max-width: 539px) {
+    width: 20rem;
+    height: 20rem;
+  }
+  @include tablet {
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+  }
+  z-index: 2;
+  width: 16rem;
+  height: 16rem;
+  body.dark & {
+    display: none;
+  }
+}
+.logo1White-contact {
+  position: absolute;
+  @media (max-width: 539px) {
+    width: 20rem;
+    height: 20rem;
+  }
+  @include tablet {
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+  }
+  z-index: 1;
+  width: 16rem;
+  height: 16rem;
+}
+.logo2-contact {
+  width: 16rem;
+  height: 16rem;
+  position: relative;
+  @media (max-width: 539px) {
+    width: 20rem;
+    height: 20rem;
+  }
+  @include tablet {
+    position: relative;
+    width: 24rem;
+    height: 24rem;
+  }
+  z-index: -1;
+  animation-name: moveDown;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 0.5s;
+}
+
+@keyframes moveDown {
+  0% {
+    top: 20px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+@media (min-width: 540px) and (max-width: 767px) {
+  @keyframes moveDown {
+    0% {
+      top: 17px;
+    }
+
+    100% {
+      top: 0;
+    }
+  }
+}
+
+@include tablet {
+  @keyframes moveDown {
+    0% {
+      top: 25px;
+    }
+
+    100% {
+      top: 0;
+    }
+  }
+}

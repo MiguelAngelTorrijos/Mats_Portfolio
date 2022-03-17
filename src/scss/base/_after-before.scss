@@ -1,0 +1,44 @@
+@use 'variables';
+
+h1,
+h2,
+h3,
+p,
+body,
+svg,
+blockquote,
+article,
+section,
+header,
+form {
+  position: relative;
+}
+
+blockquote:before {
+  @media (min-width: 930px) {
+    content: '<blockquote>';
+    font-family: 'La Belle Aurore', cursive;
+    color: #515152;
+    font-size: 1.8rem;
+    position: relative;
+    top: -8rem;
+    left: -4.1rem;
+    body.dark & {
+      opacity: 0.4;
+    }
+  }
+}
+blockquote:after {
+  @media (min-width: 930px) {
+    content: '</blockquote>';
+    font-family: 'La Belle Aurore', cursive;
+    color: #515152;
+    font-size: 1.8rem;
+    position: relative;
+    left: -2.3em;
+    bottom: -2rem;
+    body.dark & {
+      opacity: 0.4;
+    }
+  }
+}

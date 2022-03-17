@@ -1,0 +1,77 @@
+@use 'variables' as v;
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-x: hidden;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: v.$principal_font;
+  font-size: 1.6rem;
+  background-color: v.$primary;
+  //  transition: 0.3s ease all;
+  overflow-x: hidden;
+  &.dark {
+    background-color: v.$secondary;
+  }
+}
+
+p {
+  color: v.$white;
+  font-size: 2rem;
+  transition: 0.3s ease all;
+  body.dark & {
+    color: v.$primary;
+  }
+}
+.container {
+  width: 95%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  //  pointer-events: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 v.$separation 0;
+}
+h1 {
+  font-size: 4rem;
+  color: v.$white;
+  cursor: pointer;
+  body.dark & {
+    color: v.$primary;
+  }
+}
+h2 {
+  font-size: 3.6rem;
+  color: v.$white;
+  cursor: pointer;
+  body.dark & {
+    color: v.$primary;
+  }
+}
+h3 {
+  font-size: 3.2rem;
+  color: v.$white;
+  body.dark & {
+    color: v.$primary;
+  }
+}

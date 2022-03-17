@@ -1,0 +1,73 @@
+@import '../../base/mixins';
+@import '../../base/variables';
+
+.logo1 {
+  position: absolute;
+  @include tablet {
+    position: absolute;
+  }
+  z-index: 2;
+  width: 24rem;
+  height: 24rem;
+  body.dark & {
+    visibility: hidden;
+  }
+}
+.logo1White {
+  position: absolute;
+  @include tablet {
+    position: absolute;
+  }
+  z-index: 1;
+  width: 24rem;
+  height: 24rem;
+  // body.dark & {
+  //   visibility: hidden;
+  // }
+}
+.logo2 {
+  width: 24rem;
+  height: 24rem;
+  position: relative;
+  @include tablet {
+    position: absolute;
+  }
+  z-index: -1;
+  animation-name: moveDown;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 0.5s;
+}
+
+.logo3 {
+  @include tablet {
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+  }
+  z-index: -2;
+  width: 0;
+  height: 0;
+}
+
+@keyframes moveDown {
+  0% {
+    top: 25px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@include tablet {
+  @keyframes moveDown {
+    0% {
+      top: 25px;
+    }
+
+    100% {
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,198 @@
+@import '../../base/mixins';
+@import '../../base/variables';
+
+.home-contact {
+  display: flex;
+  margin-left: 2rem;
+  margin-right: 1rem;
+  margin-top: 35rem;
+  margin-bottom: 8rem;
+
+  @include tablet {
+    margin-right: 2rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    position: relative !important;
+    margin-top: 0;
+    margin-bottom: 12rem;
+  }
+
+  @media (min-width: 930px) {
+    &::before {
+      content: '<form>';
+      font-family: 'La Belle Aurore', cursive;
+      color: #515152;
+      font-size: 1.8rem;
+      position: relative;
+      margin-top: 6rem;
+      left: -0rem;
+      body.dark & {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 2rem;
+    width: 100vw;
+
+    @include tablet {
+      width: 800px;
+      & :nth-child(1) {
+        grid-column: 1/8;
+      }
+      & :nth-child(2) {
+        grid-column: 1/7;
+      }
+      & :nth-child(3) {
+        grid-column: 7/8;
+        grid-row: 2/3;
+      }
+    }
+    &__title {
+      font-size: 3.2rem;
+      color: $white;
+      margin: 0;
+      margin-bottom: 1.8rem;
+      // margin-top: 4rem;
+      margin-bottom: 1rem;
+      @include tablet {
+        margin-top: 10rem;
+        font-size: 4.8rem;
+        margin-bottom: 1.8rem;
+      }
+    }
+    &__form {
+      &__fields {
+        &__filed {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          color: white;
+          body.dark & {
+            color: $primary;
+          }
+          &__label {
+            margin-bottom: 0.6rem;
+          }
+          &__input {
+            color: $white;
+            font-size: 1.6rem;
+            padding-left: 2rem;
+            height: 5.5rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+            margin-right: 2rem;
+            margin-bottom: 3rem;
+            background-color: black;
+            border: 0.2rem solid #8b8b8b;
+            body.dark & {
+              background-color: $white;
+              color: $primary;
+            }
+            @include tablet {
+              width: auto;
+              font-size: 1.8rem;
+              margin-right: 0rem;
+            }
+            @media (max-width: 330px) {
+              width: auto;
+            }
+            &:focus {
+              outline: unset;
+              border: 1px solid $orange;
+            }
+          }
+          &__textarea {
+            color: $white;
+            font-size: 1.3rem;
+            line-height: 2.2rem;
+            display: inline-block;
+            height: 14rem;
+            padding-left: 2rem;
+            padding-top: 2rem;
+            margin-right: 2rem;
+            margin-top: 0.5rem;
+            margin-bottom: 3rem;
+            background-color: black;
+            border: 0.2rem solid #8b8b8b;
+            body.dark & {
+              background-color: $white;
+              color: $primary;
+            }
+
+            &:focus {
+              outline: unset;
+              border: 1px solid $orange;
+            }
+            @include tablet {
+              width: auto;
+              margin-right: 0rem;
+            }
+            @media (max-width: 330px) {
+              width: auto;
+            }
+          }
+        }
+      }
+      &__submit {
+        color: white;
+        font-weight: 700;
+        font-size: 1.6rem;
+        padding: 1.6rem 3.2rem;
+        background-color: black;
+        border: 0.2rem solid #8b8b8b;
+        margin-bottom: 6rem;
+        @include tablet {
+          font-size: 2rem;
+          margin-bottom: auto;
+        }
+        &:hover {
+          background-color: #55595c43;
+          body.dark & {
+            background-color: #ababab;
+          }
+        }
+      }
+    }
+  }
+}
+
+::-webkit-input-placeholder {
+  color: #8b8b8b;
+  font-size: 1.8rem;
+  //   padding-left: 1rem;
+}
+:-moz-placeholder {
+  color: #8b8b8b;
+}
+::-moz-placeholder {
+  color: #8b8b8b;
+}
+:-ms-input-placeholder {
+  color: #8b8b8b;
+}
+
+.after {
+  @media (min-width: 930px) {
+    &::after {
+      content: '</form>';
+      font-family: 'La Belle Aurore', cursive;
+      color: #515152;
+      font-size: 1.8rem;
+      position: relative;
+      top: 6rem;
+      left: -17.8rem;
+      body.dark & {
+        opacity: 0.4;
+      }
+    }
+  }
+}
+.rocket__grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,245 @@
+@import '../../base/mixins';
+@import '../../base/variables';
+
+.rocket-gif {
+  width: 26rem;
+  height: 26rem;
+  position: relative;
+  @include tablet {
+    width: 32rem;
+    height: 32rem;
+  }
+  &__rocket {
+    position: absolute;
+    z-index: 3;
+  }
+  &__fire {
+    position: absolute;
+    z-index: 2;
+    animation-name: fire;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-duration: 0.9s;
+  }
+  &__cloud1 {
+    position: absolute;
+    z-index: 6;
+    animation-name: cloud1;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+  }
+  &__cloud2 {
+    position: absolute;
+    z-index: 1;
+    animation-name: cloud2;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+  }
+  &__stars1 {
+    position: absolute;
+    z-index: -5;
+    animation-name: moveDownStars1;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+  }
+  &__stars2 {
+    position: absolute;
+    z-index: 4;
+    animation-name: moveDownStars2;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+  }
+  &__lines1 {
+    position: absolute;
+    z-index: 13;
+    animation-name: moveleftlines1;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+  }
+  &__lines2 {
+    position: absolute;
+    z-index: 12;
+    animation-name: moverightlines2;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+  }
+  &__lines3 {
+    position: absolute;
+    z-index: 10;
+    animation-name: moverightlines3;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+  }
+}
+.rocket-movement {
+  position: absolute;
+  animation-name: rocketmovement;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+
+@keyframes moveDownStars1 {
+  0% {
+    top: -70px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 25px;
+    opacity: 0;
+  }
+}
+
+@keyframes moveDownStars2 {
+  0% {
+    top: -70px;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    top: 25px;
+    opacity: 0;
+  }
+}
+
+@keyframes moveleftlines1 {
+  0% {
+    left: -2px;
+  }
+}
+@keyframes moverightlines2 {
+  0% {
+    right: -3px;
+  }
+}
+@keyframes moverightlines3 {
+  0% {
+    right: -1px;
+  }
+}
+@keyframes rocketmovement {
+  0% {
+    top: 0px;
+    left: 1px;
+  }
+  25% {
+    top: 5px;
+    left: 2px;
+  }
+  50% {
+    top: 4px;
+    left: 1px;
+  }
+  75% {
+    top: 10px;
+    left: 0px;
+  }
+  85% {
+    top: 7px;
+    left: 2px;
+  }
+
+  100% {
+    top: 0px;
+    left: 1px;
+  }
+}
+
+@keyframes fire {
+  0% {
+    top: -1px;
+    opacity: 0.9;
+  }
+  25% {
+    top: 0px;
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+  50% {
+    top: 0px;
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  75% {
+    top: -1px;
+    opacity: 0.9;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes cloud1 {
+  0% {
+    // left: 22px;
+    transform: scale(1);
+  }
+  20% {
+    // right: 1px;
+    transform: scale(1.01);
+  }
+  40% {
+    // right: 2px;
+    transform: scale(1);
+  }
+  60% {
+    // right: 0px;
+    transform: scale(1.01);
+  }
+  80% {
+    // right: 2px;
+    transform: scale(1.01);
+  }
+  100% {
+    // right: 1px;
+    transform: scale(1);
+  }
+}
+@keyframes cloud2 {
+  0% {
+    top: 1px;
+    transform: scale(1);
+  }
+  20% {
+    top: 0.5px;
+    transform: scale(0.99);
+  }
+  40% {
+    top: 1px;
+    transform: scale(0.99);
+  }
+  60% {
+    top: 0.5px;
+    transform: scale(1);
+  }
+  80% {
+    top: 1px;
+    transform: scale(0.99);
+  }
+  100% {
+    top: 0.5px;
+    transform: scale(1);
+  }
+}
